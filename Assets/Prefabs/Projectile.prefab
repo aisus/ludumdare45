@@ -262,6 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 20
+  _explosionPrefab: {fileID: 4530234258101730271, guid: ff6d2244eacaa864e8bdbd64f3138ff2,
+    type: 3}
 --- !u!50 &-7290150660291829731
 Rigidbody2D:
   serializedVersion: 4
@@ -276,8 +278,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0.01
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

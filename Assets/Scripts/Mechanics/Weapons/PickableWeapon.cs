@@ -11,7 +11,7 @@ namespace Mechanics.Weapons
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            var player = other.gameObject.GetComponent<PlayerController>();
+            var player = other.gameObject.GetComponent<PlayerCharacter>();
             if (player != null)
             {
                 player.ActivateWeapon(_weaponPrefab);

@@ -12,7 +12,7 @@ namespace Player
 
         private void Awake()
         {
-            _target = FindObjectOfType<PlayerController>().transform;
+            _target = FindObjectOfType<PlayerCharacter>().transform;
             _offset = this.transform.position - _target.position;
         }
 

@@ -9,13 +9,18 @@ using DG.Tweening;
 using Mechanics;
 using Mechanics.Weapons;
 
+using Player;
+
 using UnityEngine;
 
 
-public class BasicEnemy : MonoBehaviour, IGameCharacter
+public class BasicEnemy
+        : MonoBehaviour,
+          IGameCharacter
 {
     [SerializeField] private float      _movementSpeed;
-    [SerializeField] private float      _shootDelay = 1f;
+    [SerializeField] private float      _shootDelay        = 1f;
+    [SerializeField] private float      _detectionDistance = 10f;
     [SerializeField] private GameObject _deathEffectPrefab;
 
     private Rigidbody2D _rigidbody;
@@ -25,7 +30,9 @@ public class BasicEnemy : MonoBehaviour, IGameCharacter
 
     private Coroutine _shootCoroutine;
 
-    public Action<BasicEnemy> OnDeath; 
+    public  Action<BasicEnemy> OnDeath;
+    private int                _layer_mask;
+
 
     public void RecieveDamage()
     {
@@ -39,6 +46,7 @@ public class BasicEnemy : MonoBehaviour, IGameCharacter
         _rigidbody = GetComponent<Rigidbody2D>();
         _weapon = GetComponentInChildren<Weapon>();
         _weapon.SetMaster(this);
+        _layer_mask = ~LayerMask.GetMask("Enemies");
     }
 
     private void Start()
@@ -76,7 +84,16 @@ public class BasicEnemy : MonoBehaviour, IGameCharacter
         {
             yield return new WaitForSeconds(_shootDelay);
 
-            _weapon.Shoot();
+            Debug.DrawLine(transform.position, transform.position + transform.up * _detectionDistance, Color.cyan, 0.5f);
+            var hit = Physics2D.Raycast(transform.position, transform.up, _detectionDistance, _layer_mask);
+            if (hit.collider != null)
+            {
+                var character = hit.transform.gameObject.GetComponent<PlayerCharacter>();
+                if (character != null)
+                {
+                    _weapon.Shoot();
+                }
+            }
         }
     }
 }

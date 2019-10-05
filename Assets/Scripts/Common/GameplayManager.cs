@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 using DG.Tweening;
 
@@ -13,12 +14,14 @@ namespace Common
     {
         public static GameplayManager Instance { get; private set; }
 
-        public Vector3 PlayerPosition => _playerController.transform.position;
+        public Vector3 PlayerPosition => _playerCharacter.transform.position;
 
-        private PlayerController _playerController;
+        private PlayerCharacter  _playerCharacter;
         private List<BasicEnemy> _enemies;
 
         [SerializeField] private GameObject _weaponForPlayer;
+
+        private Coroutine _flash;
 
         public void RegisterEnemy(BasicEnemy enemy)
         {
@@ -34,7 +37,8 @@ namespace Common
         private void Awake()
         {
             Instance = this;
-            _playerController = FindObjectOfType<PlayerController>();
+            _playerCharacter = FindObjectOfType<PlayerCharacter>();
+            _playerCharacter.PlayerHit += OnPlayerHit;
         }
 
         private void OnEnemyDown(BasicEnemy enemy)
@@ -49,10 +53,29 @@ namespace Common
 
         private void OnPlayerHit()
         {
+            Camera.main.DOShakePosition(0.5f);
+            if (_flash==null)
+            {
+                _flash = StartCoroutine(FlashScreen());
+            }
         }
 
         private void OnPLayerDown()
         {
         }
+
+        private IEnumerator FlashScreen()
+        {
+            var cam = Camera.main;
+            var color = cam.backgroundColor;
+            cam.backgroundColor = Color.white;
+            cam.cullingMask = LayerMask.NameToLayer("Nothing");
+            yield return new WaitForSeconds(0.05f);
+
+            cam.cullingMask = LayerMask.NameToLayer("Everything");
+            cam.backgroundColor = color;
+            _flash = null;
+        }
     }
 }
+
