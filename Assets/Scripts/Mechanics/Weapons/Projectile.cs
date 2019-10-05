@@ -42,7 +42,7 @@ namespace Mechanics.Weapons
             var destructable = other.gameObject.GetComponent<IGameCharacter>(); 
             if (destructable != null && destructable != _someoneWhoShotThisProjectile)
             {
-                destructable.DoDamage();
+                destructable.RecieveDamage();
                 Destroy(this.gameObject);
             }
         }

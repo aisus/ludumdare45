@@ -12,7 +12,7 @@ namespace Mechanics.Enemies
         protected override void Start()
         {
             base.Start();
-            StartCoroutine(DestroyOnTimeout(5f));
+            StartCoroutine(DestroyOnTimeout(3f));
             var ps = GetComponent<ParticleSystem>();
             ps.Play();
         }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Mechanics.Weapons;
+
+using UnityEngine;
 
 
 namespace Player
@@ -13,8 +15,26 @@ namespace Player
 
         private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
 
+        private Weapon _weapon;
+        
+        public void ActivateWeapon(GameObject weaponPrefab)
+        {
+            var go = Instantiate(weaponPrefab, this.transform, true);
+            go.transform.position = transform.position;
+            go.transform.rotation = transform.rotation;
+            _weapon = go.GetComponent<Weapon>();
+        }
+
         private void Update()
         {
+            if (_weapon)
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    _weapon.Shoot();
+                }
+            }
+
             var xRaw = Input.GetAxisRaw("Horizontal");
             var yRaw = Input.GetAxisRaw("Vertical");
 

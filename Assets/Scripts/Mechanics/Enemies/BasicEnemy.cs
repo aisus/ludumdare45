@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using Common;
+
+using DG.Tweening;
 
 using Mechanics;
 using Mechanics.Weapons;
@@ -22,9 +25,12 @@ public class BasicEnemy : MonoBehaviour, IGameCharacter
 
     private Coroutine _shootCoroutine;
 
-    public void DoDamage()
+    public Action<BasicEnemy> OnDeath; 
+
+    public void RecieveDamage()
     {
         Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+        OnDeath.Invoke(this);
         Destroy(this.gameObject);
     }
 
@@ -33,6 +39,11 @@ public class BasicEnemy : MonoBehaviour, IGameCharacter
         _rigidbody = GetComponent<Rigidbody2D>();
         _weapon = GetComponentInChildren<Weapon>();
         _weapon.SetMaster(this);
+    }
+
+    private void Start()
+    {
+        GameplayManager.Instance.RegisterEnemy(this);
     }
 
     private void OnEnable()

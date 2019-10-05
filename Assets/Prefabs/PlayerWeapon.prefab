@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8558623190549018235}
   - component: {fileID: 8558623190549018236}
   m_Layer: 0
-  m_Name: BasicWeapon
+  m_Name: PlayerWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f143c14a9f06344960ec92b1c60a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 3299224030105035788, guid: 521f0774194154748b6d8ae2c3d08ce7,
+  _projectilePrefab: {fileID: 5588231643477960808, guid: d5a8982e861aa464fa226564188a9efa,
     type: 3}
 --- !u!1 &8558623190825343753
 GameObject:
