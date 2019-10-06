@@ -24,7 +24,10 @@ namespace Mechanics.Weapons
 
         public void SetFillSprite(float value)
         {
-            _image.fillAmount = value; 
+            if (_image)
+            {
+                _image.fillAmount = value;
+            }
         }
 
         private void Awake()
