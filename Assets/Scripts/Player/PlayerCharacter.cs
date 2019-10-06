@@ -18,6 +18,8 @@ namespace Player
         public int Health { get; private set; }
         
         private Weapon _weapon;
+        [SerializeField]
+        private GameObject _deathParticles;
 
         private void Awake()
         {
@@ -31,6 +33,8 @@ namespace Player
             if (Health <= 0)
             {
                 PlayerDown.Invoke();
+                Instantiate(_deathParticles, transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
         }
         

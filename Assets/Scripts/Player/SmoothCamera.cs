@@ -18,6 +18,10 @@ namespace Player
 
         private void Update()
         {
+            if (_target == null) {
+                return;
+            }
+
             Vector3 desiredPosition = _target.position + _offset;
             Vector3 smoothedPosition = Vector3.Lerp(this.transform.position, desiredPosition, Mathf.SmoothStep(0, 1, _smoothSpeed * Time.deltaTime));
             this.transform.position = smoothedPosition;

@@ -15,7 +15,7 @@ namespace Common
     {
         public static GameplayManager Instance { get; private set; }
 
-        public Vector3 PlayerPosition => _playerCharacter.transform.position;
+        public Vector3 PlayerPosition => (_playerCharacter!=null) ? _playerCharacter.transform.position : Vector3.zero;
 
         public List<Vector3> EnemiesPositions
         {
@@ -80,7 +80,16 @@ namespace Common
 
         private void OnPLayerDown()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(WaitForPayingRespects());
+        }
+
+        private IEnumerator WaitForPayingRespects() {
+            while (true) {
+                if (Input.GetKeyDown(KeyCode.F)) {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+                yield return null;
+            }
         }
 
         private void OnDestroy()
