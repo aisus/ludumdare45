@@ -25,7 +25,7 @@ public class BasicEnemy
 
     private Rigidbody2D _rigidbody;
     private float       _lookAngle;
-    private Vector2     _moveDirection;
+    protected Vector2     _moveDirection;
     private Weapon      _weapon;
 
     private Coroutine _shootCoroutine;
@@ -49,22 +49,22 @@ public class BasicEnemy
         _layer_mask = ~LayerMask.GetMask("Enemies");
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         GameplayManager.Instance.RegisterEnemy(this);
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _shootCoroutine = StartCoroutine(Shoot());
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         StopCoroutine(_shootCoroutine);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         var lookPos = GameplayManager.Instance.PlayerPosition;
         var lookDir = lookPos - this.transform.position;
@@ -72,9 +72,9 @@ public class BasicEnemy
         _lookAngle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        _rigidbody.velocity = _moveDirection * Time.fixedDeltaTime;
+        _rigidbody.velocity = _moveDirection * _movementSpeed * Time.fixedDeltaTime;
         _rigidbody.MoveRotation(Quaternion.Euler(0, 0, _lookAngle));
     }
 

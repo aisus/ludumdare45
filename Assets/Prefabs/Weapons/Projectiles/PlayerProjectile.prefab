@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 153304446231973188}
   - component: {fileID: 5864629677322127235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5588231642367974117}
   - component: {fileID: 5588231642367974118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 5588231643477960810}
   - component: {fileID: 8831698839623167097}
   - component: {fileID: 644610735196295941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

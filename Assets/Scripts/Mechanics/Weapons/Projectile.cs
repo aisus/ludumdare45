@@ -53,7 +53,11 @@ namespace Mechanics.Weapons
             }
             else
             {
-                Explode();
+                var projectile = other.gameObject.GetComponent<Projectile>();
+                if (projectile == null)
+                {
+                    Explode();
+                }
             }
         }
 
