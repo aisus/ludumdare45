@@ -13,11 +13,15 @@ namespace Player
         private void Awake()
         {
             _target = FindObjectOfType<PlayerCharacter>().transform;
-            _offset = this.transform.position - _target.position;
+            _offset = Vector3.back;
         }
 
         private void Update()
         {
+            if (_target == null) {
+                return;
+            }
+
             Vector3 desiredPosition = _target.position + _offset;
             Vector3 smoothedPosition = Vector3.Lerp(this.transform.position, desiredPosition, Mathf.SmoothStep(0, 1, _smoothSpeed * Time.deltaTime));
             this.transform.position = smoothedPosition;

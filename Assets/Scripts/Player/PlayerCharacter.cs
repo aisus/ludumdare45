@@ -14,12 +14,28 @@ namespace Player
     {
         public Action PlayerHit;
         public Action PlayerDown;
+
+        public int Health { get; private set; }
         
         private Weapon _weapon;
-        
+        [SerializeField]
+        private GameObject _deathParticles;
+
+        private void Awake()
+        {
+            Health = 2;
+        }
+
         public void RecieveDamage()
         {
             PlayerHit.Invoke();
+            Health--;
+            if (Health <= 0)
+            {
+                PlayerDown.Invoke();
+                Instantiate(_deathParticles, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
         
         public void ActivateWeapon(GameObject weaponPrefab)

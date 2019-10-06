@@ -14,7 +14,7 @@ using Player;
 
 using UnityEngine;
 
-
+[SelectionBase]
 public class BasicEnemy
         : MonoBehaviour,
           IGameCharacter
@@ -37,6 +37,7 @@ public class BasicEnemy
 
     public  Action<BasicEnemy> OnDeath;
     private int                _layer_mask;
+    protected bool _playerSeen;
 
 
     public void RecieveDamage()
@@ -103,9 +104,14 @@ public class BasicEnemy
                 var character = hit.transform.gameObject.GetComponent<PlayerCharacter>();
                 if (character != null)
                 {
+                    _playerSeen = true;
                     lastShotTime = Time.time;
                     _weapon.Shoot();
                     _weapon.SetFillSprite(0);
+                }
+                else
+                {
+                    _playerSeen = false;
                 }
             }
         }
