@@ -13,7 +13,7 @@ namespace Player
         private void Awake()
         {
             _target = FindObjectOfType<PlayerCharacter>().transform;
-            _offset = this.transform.position - _target.position;
+            _offset = Vector3.back;
         }
 
         private void Update()

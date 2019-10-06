@@ -6,6 +6,7 @@ using DG.Tweening;
 using Player;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace Common
@@ -16,8 +17,22 @@ namespace Common
 
         public Vector3 PlayerPosition => _playerCharacter.transform.position;
 
+        public List<Vector3> EnemiesPositions
+        {
+            get
+            {
+                var result = new List<Vector3>();
+                foreach (var enemy in _enemies)
+                {
+                    result.Add(enemy.transform.position);
+                }
+                return result;
+            }
+        }
+
         private PlayerCharacter  _playerCharacter;
         private List<BasicEnemy> _enemies;
+        private UiConrtoller uiConrtoller;
 
         [SerializeField] private GameObject _weaponForPlayer;
 
@@ -39,6 +54,8 @@ namespace Common
             Instance = this;
             _playerCharacter = FindObjectOfType<PlayerCharacter>();
             _playerCharacter.PlayerHit += OnPlayerHit;
+            _playerCharacter.PlayerDown += OnPLayerDown;
+            uiConrtoller = FindObjectOfType<UiConrtoller>();
         }
 
         private void OnEnemyDown(BasicEnemy enemy)
@@ -58,10 +75,17 @@ namespace Common
             {
                 _flash = StartCoroutine(FlashScreen());
             }
+            uiConrtoller.DispayHealthLost();
         }
 
         private void OnPLayerDown()
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        private void OnDestroy()
+        {
+            DOTween.Clear();
         }
 
         private IEnumerator FlashScreen()

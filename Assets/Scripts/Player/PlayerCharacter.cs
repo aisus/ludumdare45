@@ -14,12 +14,24 @@ namespace Player
     {
         public Action PlayerHit;
         public Action PlayerDown;
+
+        public int Health { get; private set; }
         
         private Weapon _weapon;
-        
+
+        private void Awake()
+        {
+            Health = 2;
+        }
+
         public void RecieveDamage()
         {
             PlayerHit.Invoke();
+            Health--;
+            if (Health <= 0)
+            {
+                PlayerDown.Invoke();
+            }
         }
         
         public void ActivateWeapon(GameObject weaponPrefab)
