@@ -1194,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: 7528012775740137539, guid: 8f80b47a0a8c6384bb495596d64e6320,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7528012775740137540, guid: 8f80b47a0a8c6384bb495596d64e6320,
         type: 3}
@@ -1503,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 7528012775740137539, guid: 8f80b47a0a8c6384bb495596d64e6320,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7528012775740137540, guid: 8f80b47a0a8c6384bb495596d64e6320,
         type: 3}
@@ -1733,6 +1733,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9015599678520511497, guid: 8f80b47a0a8c6384bb495596d64e6320,
+        type: 3}
+      propertyPath: _drawGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409428419146650431, guid: 8f80b47a0a8c6384bb495596d64e6320,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593388100255305299, guid: 8f80b47a0a8c6384bb495596d64e6320,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407079855068958168, guid: 8f80b47a0a8c6384bb495596d64e6320,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0.339
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f80b47a0a8c6384bb495596d64e6320, type: 3}
 --- !u!1001 &2248352739326781817
@@ -1746,6 +1766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BabyItsTripleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 469768226090031312, guid: db2c3f2572c08d34e9d1e7c626735efe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 469768226090031319, guid: db2c3f2572c08d34e9d1e7c626735efe,
         type: 3}
@@ -1824,7 +1849,7 @@ PrefabInstance:
     - target: {fileID: 497575040983603708, guid: c86ddf286692f5d4580b8b1ad8fbe551,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 497575040983603707, guid: c86ddf286692f5d4580b8b1ad8fbe551,
         type: 3}

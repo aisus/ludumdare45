@@ -7,6 +7,7 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        [Range(0, 1000)]
         [SerializeField] private float _movementSpeed;
 
         private Rigidbody2D _rigidbody;

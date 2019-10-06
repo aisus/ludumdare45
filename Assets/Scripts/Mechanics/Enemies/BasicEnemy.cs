@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Common;
 
 using DG.Tweening;
+using Utility;
 
 using Mechanics;
 using Mechanics.Weapons;
@@ -18,10 +19,14 @@ public class BasicEnemy
         : MonoBehaviour,
           IGameCharacter
 {
+    [Range(0, 1000)]
     [SerializeField] private float      _movementSpeed;
+    [Range(0.1f, 3)]
     [SerializeField] private float      _shootDelay        = 1f;
+    [Range(1, 50)]
     [SerializeField] private float      _detectionDistance = 10f;
     [SerializeField] private GameObject _deathEffectPrefab;
+    [SerializeField] private bool _drawGizmos;
 
     private Rigidbody2D _rigidbody;
     private float       _lookAngle;
@@ -80,20 +85,37 @@ public class BasicEnemy
 
     private IEnumerator Shoot()
     {
+        var lastShotTime = Time.time;
         while (this.isActiveAndEnabled)
         {
-            yield return new WaitForSeconds(_shootDelay);
+            var t = 0f;
+            while (t < 1)
+            {
+                t = (Time.time - lastShotTime) / _shootDelay;
+                _weapon.SetFillSprite(t);
+                yield return new WaitForEndOfFrame();
+            }
 
-            Debug.DrawLine(transform.position, transform.position + transform.up * _detectionDistance, Color.cyan, 0.5f);
+            Debug.DrawLine(transform.position, transform.position + transform.up * _detectionDistance, Color.cyan, 0.1f);
             var hit = Physics2D.Raycast(transform.position, transform.up, _detectionDistance, _layer_mask);
             if (hit.collider != null)
             {
                 var character = hit.transform.gameObject.GetComponent<PlayerCharacter>();
                 if (character != null)
                 {
+                    lastShotTime = Time.time;
                     _weapon.Shoot();
+                    _weapon.SetFillSprite(0);
                 }
             }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_drawGizmos)
+        {
+            GizmosExtensions.DrawCircleGizmo(Color.cyan, _detectionDistance, this.transform.position + Vector3.up * 0.3f, 20);
         }
     }
 }

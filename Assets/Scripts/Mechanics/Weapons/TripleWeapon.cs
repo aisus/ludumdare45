@@ -4,7 +4,9 @@ namespace Mechanics.Weapons
 {
     public class TripleWeapon : Weapon
     {
+        [Range(1, 10)]
         [SerializeField] private int _bulletsPerShot;
+        [Range(10, 120)]
         [SerializeField] private float _spreadAngle;
 
         public override void Shoot()

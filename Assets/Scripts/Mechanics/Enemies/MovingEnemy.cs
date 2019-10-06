@@ -3,7 +3,9 @@ using Common;
 
 public class MovingEnemy : BasicEnemy
 {
+    [Range(1, 50)]
     [SerializeField] private float _minRadius;
+    [Range(1, 50)]
     [SerializeField] private float _maxRadius;
 
     protected override void Update()

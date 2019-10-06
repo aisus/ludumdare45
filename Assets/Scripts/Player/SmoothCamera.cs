@@ -6,7 +6,7 @@ namespace Player
     public class SmoothCamera : MonoBehaviour
     {
         private Transform _target;
-
+        [Range(0, 50)]
         [SerializeField] private float   _smoothSpeed = 5f;
         private                  Vector3 _offset;
 

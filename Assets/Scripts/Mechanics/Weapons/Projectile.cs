@@ -9,6 +9,7 @@ namespace Mechanics.Weapons
 {
     public class Projectile : TemporaryMonoBehaviour
     {
+        [Range(1, 2000)]
         [SerializeField] private float      _speed;
         [SerializeField] private GameObject _explosionPrefab;
 
