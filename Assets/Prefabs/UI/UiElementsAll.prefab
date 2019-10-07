@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 8306684880343543053}
   _deathUi: {fileID: 6165121702494738238}
   _PauseUi: {fileID: 7654953356914098615}
+  _winUi: {fileID: 6660100545335806654}
 --- !u!1001 &4628089444387335940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +447,11 @@ PrefabInstance:
       propertyPath: _PauseUi
       value: 
       objectReference: {fileID: 7654953356914098615}
+    - target: {fileID: 3710125204633945066, guid: 09de51ef8815bce46a923407698a1576,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09de51ef8815bce46a923407698a1576, type: 3}
 --- !u!224 &8306684879477149898 stripped
@@ -613,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 1564067738343569538, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_Text
-      value: PRESS ANY KEY
+      value: PRESS SPACE TO CONTINUE
       objectReference: {fileID: 0}
     - target: {fileID: 1564067738720971611, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
@@ -632,6 +638,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562f89649306637479c83f9a7d87415b, type: 3}
+--- !u!1 &6660100545335806654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1564067737514358842, guid: 562f89649306637479c83f9a7d87415b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5321497167902372484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6660100545335806650 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,

@@ -9,6 +9,7 @@ public class UiConrtoller : MonoBehaviour
     [SerializeField] private Image[] _healthIndicators;
     [SerializeField] private GameObject _deathUi;
     [SerializeField] private GameObject _PauseUi;
+    [SerializeField] private GameObject _winUi;
 
     private bool _isPaused;
 
@@ -26,6 +27,11 @@ public class UiConrtoller : MonoBehaviour
             _healthIndicators[_currentIndex].color = Color.black;
             _deathUi.SetActive(true);
         }
+    }
+
+    public void ActivateWinUi()
+    {
+        _winUi.SetActive(true);
     }
 
     private void Update()
