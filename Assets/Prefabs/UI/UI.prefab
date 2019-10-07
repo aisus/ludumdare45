@@ -162,8 +162,6 @@ GameObject:
   - component: {fileID: 3710125204450648826}
   - component: {fileID: 3710125204450648827}
   - component: {fileID: 3710125204450648824}
-  - component: {fileID: 3710125204450648828}
-  - component: {fileID: 4839590199620065237}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -252,35 +250,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3710125204450648828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3710125204450648825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50bf89e366a59843aa6b217cb2da4f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthIndicators:
-  - {fileID: 3710125204735155182}
-  - {fileID: 3710125203521871674}
-  _deathUi: {fileID: 0}
---- !u!114 &4839590199620065237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3710125204450648825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09ea60cbb34bb243824c88d09cfdef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _PauseUi: {fileID: 0}
 --- !u!1 &3710125204633945066
 GameObject:
   m_ObjectHideFlags: 0
