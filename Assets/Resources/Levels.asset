@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - Id: MainMenu
+  - Id: Intro
   - Id: Level0
   - Id: Level1
-  - Id: Level2
   - Id: Level3
+  - Id: Level2
