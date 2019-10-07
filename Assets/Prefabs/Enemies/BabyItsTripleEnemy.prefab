@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &6502940030799429106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,10 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 0
-  _shootDelay: 1
+  _shootDelay: 3
   _detectionDistance: 10
   _deathEffectPrefab: {fileID: 96677267922803751, guid: 3cd1ce169d3f44342b5ab98619185e86,
     type: 3}
+  _drawGizmos: 0
 --- !u!1001 &6206247752399675835
 PrefabInstance:
   m_ObjectHideFlags: 0

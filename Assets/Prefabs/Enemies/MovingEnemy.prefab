@@ -85,10 +85,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 200
-  _shootDelay: 1
-  _detectionDistance: 10
+  _shootDelay: 2
+  _detectionDistance: 15
   _deathEffectPrefab: {fileID: 96677267922803751, guid: 3cd1ce169d3f44342b5ab98619185e86,
     type: 3}
+  _drawGizmos: 0
   _minRadius: 0
   _maxRadius: 0
 --- !u!1 &497575041741171705
@@ -177,6 +178,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 497575040983603707}
     m_Modifications:
+    - target: {fileID: 8558623190549018234, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
+        type: 3}
+      propertyPath: m_Name
+      value: BasicWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558623190549018234, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8558623190549018235, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -231,16 +242,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8558623190549018234, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
-        type: 3}
-      propertyPath: m_Name
-      value: BasicWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 8558623190549018234, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8558623190825343753, guid: 688d0a5388b6c3e4ea1044c8d0f4aeec,
         type: 3}
