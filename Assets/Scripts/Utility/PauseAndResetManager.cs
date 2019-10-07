@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -27,6 +28,7 @@ namespace Utility
             _isPaused = !_isPaused;
             Time.timeScale = _isPaused ? 0 : 1;
             _PauseUi.SetActive(_isPaused);
+            GameplayManager.Instance.PlaySound(GameAudioManager.SoundType.PausePress);
         }
     }
 }

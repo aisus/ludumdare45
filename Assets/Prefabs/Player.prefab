@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 500
+  _dampening: 0
 --- !u!114 &1645537375621593392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d488d8ab24d240c5a4035f9d6d3ab918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathParticles: {fileID: 96677267922803751, guid: 3cd1ce169d3f44342b5ab98619185e86,
+    type: 3}
 --- !u!1 &6494137529297449209
 GameObject:
   m_ObjectHideFlags: 0

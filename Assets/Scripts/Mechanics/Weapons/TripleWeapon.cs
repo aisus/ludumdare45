@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
+using Utility;
 
 namespace Mechanics.Weapons
 {
@@ -18,6 +20,7 @@ namespace Mechanics.Weapons
             {
                 ShotOneShot(initialAngle + angleStep * i);
             }
+            GameplayManager.Instance.PlaySound(GameAudioManager.SoundType.EnemyShot);
         }
 
         private void ShotOneShot(float angle)
