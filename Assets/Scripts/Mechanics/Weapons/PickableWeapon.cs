@@ -1,6 +1,8 @@
-﻿using Player;
+﻿using Common;
+using Player;
 
 using UnityEngine;
+using Utility;
 
 
 namespace Mechanics.Weapons
@@ -15,6 +17,7 @@ namespace Mechanics.Weapons
             if (player != null)
             {
                 player.ActivateWeapon(_weaponPrefab);
+                GameplayManager.Instance.PlaySound(GameAudioManager.SoundType.WeaponPicked);
                 Destroy(this.gameObject);
             }
         }
