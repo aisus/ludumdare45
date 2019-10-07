@@ -5147,12 +5147,17 @@ PrefabInstance:
     - target: {fileID: 992547873918154135, guid: 37d4f1d92ace1db4ba768fb3470d3491,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 992547873918154135, guid: 37d4f1d92ace1db4ba768fb3470d3491,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 992547873918154135, guid: 37d4f1d92ace1db4ba768fb3470d3491,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -2.0679104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d4f1d92ace1db4ba768fb3470d3491, type: 3}

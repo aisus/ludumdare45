@@ -65,6 +65,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067737514358842, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -83,17 +88,17 @@ PrefabInstance:
     - target: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358846, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
@@ -170,11 +175,28 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067738343569537, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 288.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358844, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067737573197518, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
+    - target: {fileID: 1564067738343569538, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562f89649306637479c83f9a7d87415b, type: 3}
 --- !u!1 &6165121702494738238 stripped
@@ -201,6 +223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3026873397416987466, guid: bd83db0c7f0e96e428aaf53d722a64a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3026873397416987470, guid: bd83db0c7f0e96e428aaf53d722a64a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -219,17 +246,17 @@ PrefabInstance:
     - target: {fileID: 3026873397416987470, guid: bd83db0c7f0e96e428aaf53d722a64a3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026873397416987470, guid: bd83db0c7f0e96e428aaf53d722a64a3,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026873397416987470, guid: bd83db0c7f0e96e428aaf53d722a64a3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026873397416987470, guid: bd83db0c7f0e96e428aaf53d722a64a3,
         type: 3}
@@ -306,6 +333,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3026873395824390160, guid: bd83db0c7f0e96e428aaf53d722a64a3,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd83db0c7f0e96e428aaf53d722a64a3, type: 3}
 --- !u!1 &7654953356914098615 stripped
@@ -452,6 +485,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3710125204633945068, guid: 09de51ef8815bce46a923407698a1576,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09de51ef8815bce46a923407698a1576, type: 3}
 --- !u!224 &8306684879477149898 stripped
@@ -606,6 +645,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067737573197517, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 383.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564067737573197517, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 47.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564067738343569537, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564067738343569537, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 354.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1564067737514358844, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -616,11 +675,23 @@ PrefabInstance:
       propertyPath: m_Text
       value: LEVEL COMPLETED
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067737573197518, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
     - target: {fileID: 1564067738343569538, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_Text
       value: PRESS SPACE TO CONTINUE
       objectReference: {fileID: 0}
+    - target: {fileID: 1564067738343569538, guid: 562f89649306637479c83f9a7d87415b,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: dad4328a10d730341bab6d5d422da581,
+        type: 3}
     - target: {fileID: 1564067738720971611, guid: 562f89649306637479c83f9a7d87415b,
         type: 3}
       propertyPath: m_Color.r
