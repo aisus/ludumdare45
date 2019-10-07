@@ -10,8 +10,9 @@ namespace UI
         [SerializeField] private GameObject _weaponPrefab;
         [SerializeField] private Button _startButton;
 
-        private void Awake()
+        private void Start()
         {
+
             FindObjectOfType<PlayerCharacter>().ActivateWeapon(_weaponPrefab);
             _startButton.onClick.AddListener(ScenesLoader.Instance.LoadNextLevel);
         }
