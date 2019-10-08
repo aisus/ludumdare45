@@ -78,6 +78,15 @@ namespace Common
             {
                 Instantiate(_weaponForPlayer, enemy.transform.position, Quaternion.identity);
             }
+            if (_enemies.Count == 0)
+            {
+                if (_playerCharacter != null && _playerCharacter.Health > 0)
+                {
+                    StartCoroutine(WaitForNextLevel());
+                    _audioManager.PlaySound(GameAudioManager.SoundType.LevelCompleted);
+                    _uiConrtoller.ActivateWinUi();
+                }
+            }
             _audioManager.PlaySound(GameAudioManager.SoundType.EnemyDead);
         }
 
@@ -89,7 +98,10 @@ namespace Common
                 _flash = StartCoroutine(FlashScreen());
             }
 
-            _uiConrtoller.DispayHealthLost();
+            if (!_playerCharacter.GodMode)
+            {
+                _uiConrtoller.DispayHealthLost();
+            }
             _audioManager.PlaySound(GameAudioManager.SoundType.PlayerHit);
         }
 
@@ -97,6 +109,19 @@ namespace Common
         {
             StartCoroutine(WaitForPayingRespects());
             _audioManager.PlaySound(GameAudioManager.SoundType.PlayerDead);
+        }
+
+        private IEnumerator WaitForNextLevel()
+        {
+            while (true)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    ScenesLoader.Instance.LoadNextLevel();
+                }
+
+                yield return null;
+            }
         }
 
         private IEnumerator WaitForPayingRespects()

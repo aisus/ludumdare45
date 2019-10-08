@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using System.Linq;
 
 namespace Utility
 {
@@ -39,7 +40,14 @@ namespace Utility
 
         public void PlaySound(SoundType type)
         {
-            var sound = _sounds.First(x => x.Type == type);
+            SoundAndType sound = null;
+            try
+            {
+                sound = _sounds.First(x => x.Type == type);
+            }
+            catch (Exception e) {
+                return;
+            }
             if (sound != null)
             {
                 if (sound.Clip != null)

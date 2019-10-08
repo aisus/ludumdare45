@@ -16,6 +16,11 @@ namespace Player
         public Action PlayerDown;
 
         public int Health { get; private set; }
+
+        public bool GodMode => _godMode;
+
+        [SerializeField]
+        private bool _godMode;
         
         private Weapon _weapon;
         [SerializeField]
@@ -29,6 +34,12 @@ namespace Player
         public void RecieveDamage()
         {
             PlayerHit.Invoke();
+
+            if (_godMode)
+            {
+                return;
+            }
+
             Health--;
             if (Health <= 0)
             {
